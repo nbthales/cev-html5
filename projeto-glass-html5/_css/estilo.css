@@ -1,0 +1,274 @@
+@charset "UTF-8";
+/*Antes ela ficava no <head><style> do index.html*/
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+/* Importando a font pelo google fonts(https://www.google.com/fonts)  */
+@font-face{ /* adicionando foto baixada */
+    font-family: 'FonteLogo' ;
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+body{
+    font-family: Arial, sans-serif;
+    /* background-image: url("fundo.jpg");
+     background-color: rgb(64, 155, 198);*/
+    background-color: #dddddd; /* hsla(165, 81%, 93%, 0.5); */
+    color: rgba(0,0,0,1); /* cor da letra rgb e transparência*/
+}
+
+div#interface{
+    width: 900px; /*delimitando a largura*/
+    background-color: #ffffff;
+    margin: -20px auto 10px auto; /* cima, direita, baixa, esquerda*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /*sombra = desloc lat, vert, espalh, cor //// rgba red green blue alpha(transparencia)*/
+    padding: 10px 10px 10px 10px; /* margem interna cima direita baixo esquerda */
+}
+
+p {
+    text-align: justify; /* estruturando a linha */
+    text-indent: 50px; /* espaço do paragrafo */
+}
+
+a{  /* todos tipo de link vão */
+    color: #606060; /* cor escura */
+    text-decoration: none; /* e não vai ter sublinhado */
+}
+
+a:hover{ /* qnd passar o mouse no link*/
+    text-decoration: underline; /* vai ter sublinhado */
+}
+
+header#cabecalho img#icone {
+    position: absolute;;
+    left: 960px;
+    top: 70px;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid; /* dashed dotted double */
+    height: 150px; /* espaço entre o topo com a linha de divisão */
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+    /* colocando imagem como bg sem repetir, desloc lateral e vertical */
+}
+
+header#cabecalho h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 30pt;
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif;
+    color: #888888;
+    font-size:15pt;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+/* Formatação de imagens com legendas */
+
+figure.foto-legenda{
+    position: relative;
+    border: 8px solid white; /* largura, tipo, cor da borda */
+    box-shadow: 1px 1px 4px black; /* desloc horiz, vertic, espalhamento, cor */
+}
+
+figure.foto-legenda img{
+    width: 100%;
+   /* height: 100%; */
+}
+
+figure.foto-legenda figcaption{
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    /* tudo que for figcaption vai ter uma posição absoluta*/
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+
+}
+
+figure.foto-legenda:hover figcaption{
+/*  quando passar o mouse por cima, vai ter opacidade 1 */
+    opacity: 1;
+}
+
+/* Formatação do Menu */
+
+nav#menu{ /* faz com q o navegador menu seja exibido como um bloco  */
+    display: block;
+}
+
+nav#menu ul{ /* criando uma formatação para o nav menu #id, tudo que for para ul*/
+    list-style: none; /*sumindo com os marcadores*/
+    text-transform: uppercase; /*colocando as letras em maiusculas*/
+    position: absolute; /*relativa fica presa dentro do container
+                          e absoluta fica livre pelo site*/
+    top: -20px; /* margem interna */
+    left: 485px; /* distância do lado esquerdo*/
+}
+
+nav#menu li{
+    display: inline-block; /* faz com que o bloco seja exibido na mesma linha */
+    background-color: #dddddd;
+    padding: 10px; /* cria um espaço dentro dele */
+    margin: 2px; /* espaço entre os objetos */
+    -webkit-transition: background-color 1s; /* safari */
+    -moz-transition: background-color 1s;/* firefox */
+    -ms-transition: background-color 1s;/* microsoft */
+    -o-transition: background-color 1s;/* opera */
+    transition: background-color 1s; /* tempo de transição
+    http://expressprefixr.herokuapp.com/ */
+}
+
+nav#menu li:hover{ /* quando passaro mouse por cima */
+    background-color: #606060;
+}
+
+nav#menu h1{ /* fazendo formatação para enscondelo */
+    display: none;
+}
+
+nav#menu a {
+    color: black; /* cor da letra */
+    text-decoration: none; /* tirando o sublinhado */
+}
+
+nav#menu a:hover{
+    color: #ffffff; /* muda a cor para branco qnd passar o mouse */
+    text-decoration: underline;
+}
+
+section#corpo{
+    display: block; /*para ser mostrada como bloco*/
+    width: 500px; /* largura */
+    float: left; /* section flutue para o lado esquerdo */
+    border-right: 1px solid #606060 ; /* linha lateral direita de 1px */
+    padding-right: 15px; /* espaçamento interno */
+}
+
+article#noticia-principal h2{
+    font-size: 13pt;
+    color: #606060;
+    background: #dddddd;
+    padding: 5px 0px 5px 10px; /* margem interna cima direita baixo esquerda */
+    margin: 10px 0px 10px 0px; /* espaço entre os objetos */
+}
+
+header#cabecalho-artigo h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.direita{
+    text-align: right;
+}
+
+header#cabecalho-artigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+
+}
+header#cabecalho-artigo h3{
+    font-size: 12px;
+    color: #606060;
+}
+
+table#tabelaspec{ /* tudo que for table#tabelaspec*/
+    border: 1px solid #606060; /* borda na tabela de 1px solida sinza */
+    border-spacing: 0px; /* espaço entre as células */
+    margin-left: auto; /*centralizando a tabela*/
+    margin-right: auto;
+}
+
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px; /* espalo interno entre todos os objetos */
+    text-align: center; /* células com alinhamento no centro */
+    vertical-align: middle;/* alinhamento vertical top/bottom/middle */
+}
+
+table#tabelaspec td.ce{ /* formatação para todas as células esquerda */
+    color: #ffffff; /* cor da letra branca */
+    background-color: #606060; /* bg cinza escuro */
+    vertical-align: top; /* alinhamento vertical top*/
+    font-weight: bold; /* colocando em negrito */
+    text-align: right; /* células com alinhamento a direita */
+}
+
+table#tabelaspec td.cd{ /* formatação para todas as células direita */
+    background-color: #cecece; /* bg cinza claro */
+}
+
+table#tabelaspec caption{
+    color: #888888; /* cor de font mais clara */
+    font-size: 13pt; /* tamanho */
+    font-weight: bolder; /* negrito */
+}
+
+table#tabelaspec caption span{
+    display: block; /* vai se desconectar com o texto */
+    float: right; /* vai ter uma flutuação a direita */
+    color: #000000; /* fonte preta */
+    font-size: 8pt; /* tamanho de 8pt */
+    margin-top: 10px; /* margem de topo */
+}
+
+aside#lateral{
+    display: block; /*para ser mostrada como bloco*/
+    width: 350px; /* largura */
+    float: right; /* aside flutue para o lado direito */
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow:2px 2px 2px rgba(0,0,0,0.5);
+}
+
+aside#lateral h1{
+    font-family:'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2{
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5pt;
+}
+
+footer#rodape{
+    clear: both; /* limpando a formatação */
+    border-top: 1px solid #606060 ;
+}
+
+footer#rodape p{
+    text-align: center;
+}
+
+video#fazer{
+    display: block;
+    position: relative;
+    width:500px;
+    margin: 0px auto 15px auto; /* cima, direita, baixa, esquerda*/
+}
+
+video#recente{
+    display: block;
+    position: relative;
+    width:350px;
+    margin: -16px auto 0px auto; /* cima, direita, baixa, esquerda*/
+}

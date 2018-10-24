@@ -1,0 +1,81 @@
+<!DOCTYOE html> <!-- dizendo que é um documento em html5 -->
+<html lang="pt-br"> <!-- informando o idioma -->
+<head> <!-- configurações comportamentais do seu site -->
+    <meta charset="UTF-8"/> <!-- lendo caracteres latinos -->
+    <title>Tudo sobre Google Glass</title> <!-- mudando o nome da aba -->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <!--Gera uma ligação entre o arquivo html e o css
+    stylesheet = folha de estilo = css
+    hred - Referência de hipertexto-->
+    <link rel="stylesheet" href="_css/fotos.css"/>
+</head>
+
+<script language="JavaScript" src="_javascript/funcoes.js"></script>
+<!-- Liga o index.html no funcoes.js -->
+
+<body> <!-- tudo que vai aparecer visualmente -->
+<div id="interface"> <!-- Dividir a interface da pag
+                     dando indentificação a essa div -->
+    <header id="cabecalho"> <!-- tag criar cabeçalho -->
+        <hgroup> <!-- grupo de titulos -->
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/fotos.png">
+        <!-- adicionando imagem, src parâmetro(caminho) -->
+        <nav id="menu"><!-- Menu de navegação -->
+            <h1>Menu Principal</h1>
+            <!-- <ol type="I" start="2"> <!--Ordered lists - Lista ordenada, tipo "I" = números romanos, começando a partir do 2, parâmetro de início-->
+            <ul type="disc"><!--Unordered lists, não ordenada(com demarcadores)
+        type=square => quadrados, circle = circulos -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/fotos.png')"><a href="index.html">Home</a></li><!--List items - item da lista -->
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/fotos.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/fotos.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/fotos.png')"><a href="multimidia.html">Multimídia</a></li>
+                <!-- quando passar o mouse no menu ele mostra a imagem específica, e se tirar o mouse, volta o óculos -->
+                <!--<ul type="square">
+                        <li>Músicas</li>
+                        <li>Vídeos</li>
+                    </ul>-->
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/fotos.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+            <!--</ol>-->
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+        <article id="noticia-principal"> <!-- Um artigo  -->
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Glass > Fotos</h3>
+                    <h1>Galeria de Imagens do Google Glass</h1>
+                    <h2>por Thales Terra</h2>
+                    <h3 class="direita">Atualizado em Julho/2016</h3>
+                </hgroup>
+            </header>
+
+
+    <p>Veja na nossa galeria de fotos várias belas imagens que mostram algumas das principais características do Google Glass, como recursos e propriedades que estão impressionando o mundo inteiro. Basta passar o mouse sobre uma das fotos para ver uma versão ampliada e com uma breve descrição.</p>
+
+<ul id="album-fotos">
+    <li id="foto01"><span>Agenda e lembretes</span></li>
+    <li id="foto02"><span>Sergey Brin usando o Glass</span></li>
+    <li id="foto03"><span>Leve e compacto</span></li>
+    <li id="foto04"><span>Sensação de uma tela de 50"</span></li>
+    <li id="foto05"><span>Vários tipos de lente</span></li>
+    <li id="foto06"><span>Informações importantes</span></li>
+</ul>
+
+        </article>
+    </section>
+
+    <footer id="rodape">
+        <p>Copyright &copy; 2016 - by Thales Terra <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- espaço -->
+            <a href="http://facebook.com/ThalesTerra" target="_blank">Facebook</a> | <a href="https://twitter.com/ilyzerrie" target="blank"> Twitter</a> | <a href="https://www.instagram.com/nbthales/" target="blank"> Instagram</a></p>
+    </footer>
+
+</div>
+</body>
+</html>

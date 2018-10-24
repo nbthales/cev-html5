@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste JavaScript</title>
+    <script>
+        var quebrada = false; // variavel global
+        function mudaLampada(tipo) {
+/*            if (tipo == 1) {
+                arquivo = "_imagens/lampada-acesa.jpg";
+            }
+            if (tipo == 2) {
+                arquivo = "_imagens/lampada-apagada.jpg";
+            }
+            if (tipo == 3) {
+                arquivo = "_imagens/lampada-quebrada.jpg";
+            }
+*/
+            if (!quebrada) {
+                document.getElementById("luz").src = "_imagens/"+tipo+".jpg";
+                if (tipo == 'lampada-quebrada') {
+                    quebrada = true; // não vai alterar depois de quebrada
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1> Acenda a lâmpada</h1>
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/>
+
+ <!--   <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)"/>
+    <!-- parâmetro 1 = passa o mouse ela ascende
+         parâmetro 2 = tira o mouse ela apaga
+         parâmetro 3 = quebra a lâmpada-->
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYOE html> <!-- dizendo que é um documento em html5 -->
+<html lang="pt-br"> <!-- informando o idioma -->
+<head> <!-- configurações comportamentais do seu site -->
+    <meta charset="UTF-8"/> <!-- lendo caracteres latinos -->
+    <title>Tudo sobre Google Glass</title> <!-- mudando o nome da aba -->
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <!--Gera uma ligação entre o arquivo html e o css
+    stylesheet = folha de estilo = css
+    hred - Referência de hipertexto-->
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+
+</head>
+
+<script language="JavaScript" src="_javascript/funcoes.js"></script>
+<!-- Liga o index.html no funcoes.js -->
+<script>
+    function calc_total(){
+        var qtd = parseInt(document.getElementById('cQtd').value)
+        tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+
+<body> <!-- tudo que vai aparecer visualmente -->
+<div id="interface"> <!-- Dividir a interface da pag
+                     dando indentificação a essa div -->
+    <header id="cabecalho"> <!-- tag criar cabeçalho -->
+        <hgroup> <!-- grupo de titulos -->
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png">
+        <!-- adicionando imagem, src parâmetro(caminho) -->
+        <nav id="menu"><!-- Menu de navegação -->
+            <h1>Menu Principal</h1>
+            <!-- <ol type="I" start="2"> <!--Ordered lists - Lista ordenada, tipo "I" = números romanos, começando a partir do 2, parâmetro de início-->
+            <ul type="disc"><!--Unordered lists, não ordenada(com demarcadores)
+        type=square => quadrados, circle = circulos -->
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li><!--List items - item da lista -->
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <!-- quando passar o mouse no menu ele mostra a imagem específica, e se tirar o mouse, volta o óculos -->
+                <!--<ul type="square">
+                        <li>Músicas</li>
+                        <li>Vídeos</li>
+                    </ul>-->
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+            <!--</ol>-->
+        </nav>
+    </header>
+
+    <section id="corpo-full">
+        <article id="noticia-principal"> <!-- Um artigo  -->
+            <header id="cabecalho-artigo">
+                <hgroup>
+                    <h3>Fale Conosco > Contato</h3>
+                    <h1>Formulário de Contato</h1>
+                    <h2>por Thales Terra</h2>
+                    <h3 class="direita">Atualizado em Julho/2016</h3>
+                </hgroup>
+            </header>
+
+<form method="post" id="fContato" action="mailto:nbthales@gmail.com" oninput="calc_total();">
+    <!-- method get mais veloz e menos seguro, vai pegar os dados e colocar na sua url
+         method post um pouco mais lento, mais seguro, pq os dados não serão enviados para a url, eles serão enviados diretamente por pacotes dentro da solicitação que vc fez ao site
+
+         action = para onde os dados vão serem enviados
+         oniput = quando digitar alguam coisa ele vai disparar um procedimento-->
+    <fieldset id="usuario">
+    <legend>Identificação do Usuário</legend>
+    <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p>
+    <p><label for="cSenha">Senha:</label><input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos"/> </p>
+    <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40"></p>
+    <fieldset id="sexo">
+        <legend><label for="cMasc">Sexo</label></legend>
+        <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label> <br/>
+        <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label>
+    </fieldset>
+    <p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"/></p>
+    </fieldset>
+
+    <!-- fieldset significa conjunto de campo
+         legend no caso é um titulo na borda
+        tag-> input para criar objeto
+  parâmetro-> type para usar caixa de texto
+         name é o nome do objeto
+         size é a quantidade de caracteres que ele aceita da caixa
+         maxlength é o tamanho máximo de caracteres
+         placeholder é uma espécie de dica
+         label referencia seus objetos aos id's
+         checket fica marcado o radiobutton-->
+
+
+    <fieldset id="endereco">
+    <legend>Endereço do Usuário</legend>
+    <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, av, Trav, ..."></p>
+    <p><label for="cNum">Número:</label><input type="number" name="tNum" id="cNum" min="0" max="99999"></p>
+    <p><label for="cEst">Estado:</label>
+    <select name="tEst" id="cEst">
+        <optgroup label="Região Sudeste">
+            <option value="MG" selected>Minas Gerais</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP">São Paulo</option>
+        </optgroup>
+        <optgroup label="Região Sul">
+            <option value="PR">Paraná</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="RS">Rio Grande do Sul</option>
+        </optgroup>
+    </select></p>
+    <p><label for="cCid">Cidade:</label>
+    <input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p>
+        <datalist id="cidades">
+            <option value="Rio de Janeiro"></option>
+            <option value="Nova Iguaçu"></option>
+            <option value="Niterói"></option>
+            <option value="Belford Roxo"></option>
+        </datalist>
+    </fieldset>
+
+    <fieldset id="mensagem">
+    <legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência:</label>
+    Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/>Máx</p>
+    <p><label for="cMsg">Mensagem:</label>
+    <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+    </fieldset>
+
+    <fieldset id="pedido">
+    <legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPed" id="cPed" checked/>
+        <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><label for="cCor">Cor:</label>
+    <input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+    <p><label for="cQtd">Quantidade:</label>
+    <input type="number" name="tQtd" id="cQtd" min="0" max="5"/></p>
+    <p><label for="cTot">Preço Total: R$</label>
+    <input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/></p>
+    </fieldset>
+    <!-- step define o salto que vai ocorrer de um valor ao outro
+         textarea são objetos de caixa de texto maior do que um objeto comum de caixa de texto
+         cols = quantidade de colunas que vai ser exibido
+         rows = quantidades de linhas
+         readonly = somente para leitura-->
+
+<!-- <input type="submit" value="Enviar"/> -->
+<input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+</form> <!-- formulário -->
+            </article>
+        </section>
+
+    <footer id="rodape">
+        <p>Copyright &copy; 2016 - by Thales Terra <br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- espaço -->
+            <a href="http://facebook.com/ThalesTerra" target="_blank">Facebook</a> | <a href="https://twitter.com/ilyzerrie" target="blank"> Twitter</a> | <a href="https://www.instagram.com/nbthales/" target="blank"> Instagram</a></p>
+    </footer>
+
+</div>
+</body>
+</html>
